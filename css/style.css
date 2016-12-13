@@ -1,0 +1,518 @@
+html, body{
+    font-family: 'Open Sans', sans-serif;
+	background: #e0e0e0;
+	margin: 1em;
+}
+
+/* Fixed Border */
+#top, #bottom, #left, #right{
+    z-index: 2;
+	background: #29295B;
+	position: fixed;
+}
+#left, #right{
+	top: 0; bottom: 0;
+	width: 1em;
+}
+#left{ 
+	left: 0;
+}
+#right{
+	right: 0;
+}
+#top, #bottom
+{
+	left: 0; right: 0;
+	height: 1em;
+}
+#top{
+	top: 0;
+}
+#bottom{
+	bottom: 0; 
+}
+
+/* Autocomplete + Elimination des maman et papa aveugle */
+.ui-autocomplete{
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: #f2f2f2;
+    border: 1px solid #D0D2D6;
+    border-radius: 0.3125em;
+    outline: none;
+    padding: 7px;
+    text-align: center;
+    width: 350px;
+    max-width: 50%;
+    cursor: pointer;
+}
+
+.ui-helper-hidden-accessible{
+    display: none; 
+}
+
+/* FormEcole */
+.registerForm{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+#divAccueil{
+    position: relative;
+}
+
+#imgValidation{
+	display: block;
+	margin: auto;
+	margin-top: 1em;
+	width: 600px;
+	height: 400px;
+}
+
+#imgValidation2{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    right: 25vw;
+    margin-top: 0.7em;
+	width: 300px;
+	height: 200px;
+}
+
+#pWrongMessage, #pNoMessage, #pOkMessage{
+    display: none;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    width: 180px;
+    z-index: 2;
+    top: 30px;
+    right: 29vw;
+}
+
+#Logo{
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 80px;
+}
+
+#pTitle{
+    margin: 0;
+    color: #656565;
+    text-align: center;
+}
+
+#h1Title{
+    margin: 0;
+    color: #2B3797;
+    text-align: center;
+}
+
+.registerForm input{
+	outline: none;
+    border-radius: 0.3125em;
+    border: 1px solid #D0D1D5;
+    border-color: #D0D2D6;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+	width: 350px;
+	max-width: 50%;
+    margin-bottom: 1em;
+}
+
+.submit{
+	padding: 7px 15px 5px;
+    border: none;
+    background-color: #60A969;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    outline: none;
+    border-bottom: 1px solid #4b8b53;
+    box-shadow: 0px 1px 1px -1px #909297;
+    -webkit-transition: color 150ms;
+    -moz-transition: color 150ms;
+    transition: color 150ms;
+    height: 40px;
+    width: 150px;
+    font-size: 13px;
+    margin: auto;
+}
+
+.submit:hover{   
+    background-color: #67b972;
+    border-color: #67b972;
+    border-bottom-color: #4aa256;
+}
+
+/* Menu des catégories */
+#menuCategories{
+    display: none;
+}
+
+#categorie1, #categorie2, #categorie3, #categorie4, #categorie5, #categorie6{
+    display: inline-block;   
+    width: 33%;
+    height: 45vh;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#categorie1:hover, #categorie2:hover, #categorie3:hover, #categorie4:hover, #categorie5:hover, #categorie6:hover{
+    transition: 0.2s;
+    transition-timing-function: linear;
+    box-shadow: 1px 1px 8px 0px #656565;
+    cursor: pointer;
+}
+
+#categorie1, #categorie2, #categorie4, #categorie5{
+    border-right: 1px solid #d1d1d1;
+}
+
+#menuCategories p{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #29295B;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#menuCategories img{
+    display: block;
+    margin: auto;
+    width: 320px;
+    height: 180px;    
+}
+
+/* Design catégorie */
+#menuButton{
+    display: none;
+}
+
+#menuButton img{
+    display: inline-block; 
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    border-radius: 150px;
+}
+
+#menuButton img:hover{
+    transition: 0.2s;
+    transition-timing-function: linear;
+    box-shadow: 1px 1px 8px 0px #656565;
+    cursor: pointer;
+}
+
+/* Detail section 1 */
+#detailCategorie1{
+    display: none;
+    text-align: center;
+}
+
+#selectionNiveau, #recetteFacile, #recetteMoyenne, #recetteDure{
+    display: none;
+}
+
+#detailCategorie1 h3{
+    color: #29295B;
+    font-size: 1.5em;
+    margin: 0 1.5em 0 1.5em;
+}
+
+#detailCategorie1 p{
+    color: #656565;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+#detailCategorie1 p span{
+    color: #656565;
+    font-weight: bold;
+}
+
+#buttonFacile{
+    padding: 7px 15px 5px;
+    margin-top: 5em;
+    border: none;
+    background-color: #60A969;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    outline: none;
+    border-bottom: 1px solid #4b8b53;
+    box-shadow: 0px 1px 1px -1px #909297;
+    -webkit-transition: color 150ms;
+    -moz-transition: color 150ms;
+    transition: color 150ms;
+    height: 40px;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttonFacile:hover{   
+    background-color: #67b972;
+    border-color: #67b972;
+    border-bottom-color: #4aa256;
+}
+
+#buttonMoyenne{
+    padding: 7px 15px 5px;
+    margin-top: 5em;
+    border: none;
+    background-color: #e0a129;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    outline: none;
+    border-bottom: 1px solid #b48223;
+    box-shadow: 0px 1px 1px -1px #909297;
+    -webkit-transition: color 150ms;
+    -moz-transition: color 150ms;
+    transition: color 150ms;
+    height: 40px;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttonMoyenne:hover{   
+    background-color: #ebad37;
+    border-color: #966d20;
+    border-bottom-color: #9f7320;
+}
+
+#buttonDure{
+    padding: 7px 15px 5px;
+    margin-top: 5em;
+    border: none;
+    background-color: #ba3f3f;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    outline: none;
+    border-bottom: 1px solid #963333;
+    box-shadow: 0px 1px 1px -1px #909297;
+    -webkit-transition: color 150ms;
+    -moz-transition: color 150ms;
+    transition: color 150ms;
+    height: 40px;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttonDure:hover{   
+    background-color: #dd4646;
+    border-color: #912e2e;
+    border-bottom-color: #762626;
+}
+
+#imageRecette{
+    width: 400px;
+}
+
+/* Detail section 2 */
+#detailCategorie2{
+    display: none;
+}
+
+#detailCategorie2 p{
+    color: #29295B;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#detailCategorie2 select{
+    display: block;
+    margin: auto;
+    outline: none;
+    border-radius: 0.3125em;
+    border: 1px solid #D0D1D5;
+    border-color: #D0D2D6;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+	width: 450px;
+	max-width: 50%;
+    margin-bottom: 1em;
+}
+
+#dropdownSelect{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+}
+
+#explicationCarotte{
+    display: none;
+}
+
+#explicationCarotte p{
+    text-align: justify;
+    display: inline-block;
+    color: #656565;
+    font-size: 1em;
+    width: 80%;
+    margin: 1em 0 1.5em 3em;
+}
+
+#imgCat2{
+    float: left;
+    width: 200px;
+}
+
+/* Detail section 3 */
+#detailCategorie3{
+    display: none;
+}
+
+#detailCategorie3 li, #detailCategorie1 li{
+    display: inline-block;
+    list-style: none;
+    font-style: italic;
+}
+
+#detailCategorie3 img{
+    width: 150px;
+    height: 150px;
+}
+
+#detailCategorie3 img:hover{
+    cursor: pointer;
+}
+
+#produitSaison{
+    text-align: center;
+}
+
+#detailCategorie3 h3{
+    color: #29295B;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+#detailCategorie3 p{
+    color: #656565;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+.descriptionRecette{
+    margin-top: 3em;
+    text-align: justify;
+    margin: auto;
+    width: 90vw;
+}
+
+#recetteProduit1, #recetteProduit2, #recetteProduit3, #recetteProduit4{
+    display: none;
+}
+
+/* Detail section 4 */
+#detailCategorie4{
+    display: none;
+    text-align: center;
+}
+
+#detailCategorie4 img{
+    width: 700px;
+}
+
+#detailCategorie4 h2{
+    color: #29295B;
+    font-size: 2em;
+    margin: 0 2em 2em 2em;
+}
+
+#detailCategorie4 p{
+    color: #656565;
+    font-size: 1.125em;
+    margin-top: 1.5em;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+#pCat4{
+    text-align: justify;
+    margin: auto;
+    width: 700px;
+}
+
+/* Detail section 5 */
+#detailCategorie5{
+    display: none;
+}
+
+#detailCategorie5 h2{
+    color: #29295B;
+    font-size: 2em;
+    margin: 0 2em 0 2em;
+}
+
+#detailCategorie5 p{
+    color: #656565;
+    font-size: 1.125em;
+    margin-left: 3.5em;
+    margin-right: 6em;
+    text-align: justify;
+}
+
+#detailCategorie5 p span{
+    color: #656565;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#chefCat5{
+    width: 650px;
+    height: 400px;
+    float: right;
+}
+/* Detail section 6 */
+#detailCategorie6{
+    display: none;
+}
+
+#detailCategorie6 input, textarea{
+    display: block;
+    margin: auto;
+	outline: none;
+    border-radius: 0.3125em;
+    border: 1px solid #D0D1D5;
+    border-color: #D0D2D6;
+    padding: 10px;
+    text-align: left;
+    background-color: #fff;
+	width: 450px;
+	max-width: 50%;
+    margin-bottom: 1em;
+}
+
+#detailCategorie6 textarea{
+    color: #A9A9A9;
+}
+   
+#detailCategorie6 img{
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+}

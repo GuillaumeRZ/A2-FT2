@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sodexo: Datavisualisation</title>
+        <meta name="description" content="Datavisualisation sur l'expertise goût de Sodexo.">
+        <link rel="icon" type="image/png" href="images/favicon.png"/>
+        
+        <!-- Libraries -->
+        <script src="libraries/jquery-1.11.3.min.js"></script>
+        <script src="libraries/jquery-ui.js"></script>
+        <script src="libraries/jquery-ui.css"></script>
+        <script src="libraries/sweetalert.js"></script>
+        <script src="libraries/ddsclick.js"></script>
+        <link rel="stylesheet" type="text/css" href="libraries/sweetalert.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <!-- Style -->
+        <link rel="stylesheet" href="libraries/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="libraries/animate.css">
+    </head>
+
+    <body>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
+        
+        <img src="images/menu/sodexo.svg" alt="Logo Sodexo" id="Logo">
+        <p id="pTitle">présente</p>
+        <h1 id="h1Title">Le carnet de correspondance culinaire</h1>
+        
+        <div id="divAccueil">
+            <img src="images/accueil.svg" alt="Validation de l'école" id="imgValidation">
+            <img src="images/bulle.svg" alt="Bulle de validation" id="imgValidation2">
+            <p id="pNoMessage">Merci de renseigner l'établissement de votre enfant !</p>
+            <p id="pWrongMessage">Allons ! Je ne travaille pas dans cet établissement.</p>
+            <p id="pOkMessage">Voyons en quoi je peux vous aider ! Suivez moi.</p>
+        </div>
+          
+        <form id="ecoleForm">
+            <div class="registerForm">
+                <input id="ecole" autofocus="" placeholder="Nom de l'école de votre enfant" autocomplete="on" name="ecole" type="text">
+            </div>
+            <button id="submitEcole" type="submit" class="submit">Valider</button>
+        </form>
+        
+        <div id="menuCategories">
+            <div id="categorie1">
+                <p>Que faire pour le dîner ?</p>
+                <img src="images/menu/cesoir.svg" alt="Illustration quoi manger ce soir" id="imgMenuCat1">
+            </div>
+            <div id="categorie2">
+                <p>Comment leur faire manger de tout !</p>
+                <img src="images/menu/comment.svg" alt="Illustration comment manger de tout" id="imgMenuCat2">
+            </div>
+            <div id="categorie3">
+                <p>Les produits de saison.</p>                
+                <img src="images/menu/saison.svg" alt="Illustration sur les produits de saisons" id="imgMenuCat3">
+            </div>
+            <div id="categorie4">
+                <p>Fini le gaspillage, nos conseils !</p>
+                <img src="images/menu/recyclage.svg" alt="Illustration sur le recyclage" id="imgMenuCat4">
+            </div>
+            <div id="categorie5">
+                <p>Sodexo s'engage.</p>
+                <img src="images/menu/sodexo.svg" alt="Illustration Sodexo s'engage" id="imgMenuCat5">
+            </div>
+            <div id="categorie6">
+                <p>Communiquez avec nos experts.</p>
+                <img src="images/menu/experts.svg" alt="Illustration contacter un expert" id="imgMenuCat6">
+            </div>
+        </div>
+        
+        <div id="menuButton">
+            <img src="images/menu/outils/returnMenu.svg" alt="Retour au menu principal">
+        </div>
+        
+        <div id="detailCategorie1">
+            <h3>Le 28 Janvier, ont été servis dans le restaurant scolaire de votre enfant:</h3>
+            <p><span>Entrée: </span> Macédoine de légumes</p>
+            <p><span>Plat: </span>Marmite de poisson à l'orientale</p>
+            <p><span>Légume: </span>Boulgour</p>
+            <p><span>Laitage: </span>St Bricet</p>
+            <p><span>Dessert: </span>Fruit de saison </p>
+            <div id="selectionNiveau">
+                <button id="buttonFacile">Tomate cerise d’amour (facile)</button>
+                <button id="buttonMoyenne">Tarte à la tomate (moyen)</button>
+                <button id="buttonDure">Tomates farcies (difficile)</button>
+            </div>
+            <div id="recetteFacile">
+                <h3>Tomate cerise d’amour</h3>
+                <img src="images/menu/1/cuisine.svg" alt="Illustration cuisine" id="imageRecette">
+                <p>Ingrédients:</p>
+                <ul>
+                    <li>12 tomates cerises,</li>
+                    <li>100g de sucre,</li>
+                    <li>240g de farine,</li>
+                    <li>4 oeufs,</li>
+                    <li>160g de beurre mou.</li>
+                </ul>
+                <p class="descriptionRecette">Placer les tomates cerises au réfrigérateur au moins une demi-heure avant de préparer la recette.<br>
+Dans une petite casserole, l'eau puis le sucre.<br>
+Chauffer à feu moyen, jusqu’à obtention d’un caramel blond.<br>
+Ôter la casserole du feu et la placer éventuellement au dessus d’un bain-marie, afin que le caramel ne durcisse pas immédiatement.<br>
+Piquer les tomates, les plonger dans le caramel puis dans les graines de sésame.<br>
+Pour finir: Les disposer sur une assiette légèrement huilée pour qu’elles refroidissent.<br> Les déguster dans les heures qui suivent et ne pas les entreposer au réfrigérateur sous peine de voir la couche de caramel tomber des tomates sous l'effet de l'humidité ambiante.
+</p>
+           </div>
+           <div id="recetteMoyenne">
+                <h3>Tarte à la tomate</h3>
+                    <img src="images/menu/1/cuisine.svg" alt="Illustration cuisine" id="imageRecette">
+                    <p>Ingrédients:</p>
+                    <ul>
+                        <li>1 pâte brisée,</li>
+                        <li>4 tomates bien mûres,</li>
+                        <li>240g de farine,</li>
+                        <li>4 oeufs,</li>
+                        <li>160g de beurre mou.</li>
+                    </ul>
+                    <p class="descriptionRecette">Précuire la pâte (percée avec une fourchette) 5 min à 230°C.<br>
+    Pendant ce temps, couper les tomates en rondelles de 3 mm d'épaisseur. br>
+    Sortir la pâte précuite du four.<br> badigeonner le fond de moutarde de Dijon (la classique fait l'affaire) en mettre suffisamment pour que le fond en pâte ne se voit plus.<br>
+    Disposer les tranches de tomates. faire plusieurs épaisseurs.<br>
+    saupoudrer d'herbes de Provence + 2 pincées de sel.<br>
+    1 cuillère à soupe d'huile d'olive.<br>
+    Enfourner pour 20 min à 230°C puis couvrir avec papier d'aluminium pour 20 min supplémentaires.<br> Après ces 20 min, enlever le papier aluminium et laisser cuire encore 5 min porte du four ouverte.<br>
+    Délicieux avec une salade verte.</p>
+            </div>
+            <div id="recetteDure">
+                <h3>Tomates farcies</h3>
+                    <img src="images/menu/1/cuisine.svg" alt="Illustration cuisine" id="imageRecette">
+                    <p>Ingrédients:</p>
+                    <ul>
+                        <li>500 g de chair à saucisse,</li>
+                        <li>4 tomates bien mûres,</li>
+                        <li>240g de farine,</li>
+                        <li>3 petits oignons,</li>
+                        <li>160g de beurre mou.</li>
+                    </ul>
+                    <p class="descriptionRecette">Eplucher et hacher les oignons. Eplucher et hacher les gousses d'ail.<br>
+    Mettre la moitié des oignons dans la chair à saucisse. Ajouter l'ail, le sel, le poivre et un peu de persil.<br>
+    Couper le haut des tomates et les évider. Poivrer et saler l'intérieur. Mettre la farce à l'intérieur et remettre les chapeaux.<br>
+    Mettre le reste des oignons dans un plat avec la chair des tomates.<br>
+    Mettre les tomates farcies dans le plat. Parsemez d'un peu de thym et mette une noisette de beurre
+    sur chaque tomates. <br>
+    Faire cuire au four chaud à 180°C (thermostat 6) pendant 1 heure environ.<br>
+    Servir avec du riz.</p>
+            </div>
+        </div>
+        
+        <div id="detailCategorie2">
+            <p>Comment lui faire manger des:</p>
+            <div id="dropdownSelect"></div>
+            <div id="explicationCarotte">
+                <img src="images/menu/2/carottes.svg" alt="Illustration carotte" id="imgCat2">
+                <p>Là où les plus jeunes préfèrent les carottes rapées, ces dernières ne font parfois pas toujours l'unanimité !</p>
+                <p>En effet, les plats avec des carottes cuitent sont plus consommés chez les enfants plus agés.</p>
+                <p>Ainsi, pour que le légume soit consommé facilement, amusez notre fine bouche en mettant en scène la carotte, la préparation de la nourriture joue un rôle important dans sa consommation par la suite.</p>
+            </div>
+        </div>
+        
+        
+        <div id="detailCategorie3">
+           <div id="produitSaison">
+                <h3>Voici les produits de saisons de votre région:</h3>
+                <p>(Sodexo s'engage à servir des produits locaux et de saison, dans tous ses restaurants. Découvrez nos recettes en cliquant dessus)</p>
+                <ul>
+                   <li><img src="images/menu/3/orange.svg" alt="Fruit de saison" id="produitSaison1"></li>
+                   <li><img src="images/menu/3/pomme.svg" alt="Fruit de saison" id="produitSaison2"></li>
+                   <li><img src="images/menu/3/carotte.svg" alt="Légume de saison" id="produitSaison3"></li>
+                   <li><img src="images/menu/3/tomate.svg" alt="Fruit de saison" id="produitSaison4"></li>
+               </ul>
+           </div>
+            <div id="recetteProduit1">
+                <h3>Gâteau à l'orange</h3>
+                <p>Ingrédients:</p>
+                <ul>
+                    <li>3 oranges,</li>
+                    <li>200g de sucre,</li>
+                    <li>240g de farine,</li>
+                    <li>4 oeufs,</li>
+                    <li>160g de beurre mou.</li>
+                </ul>
+                <p class="descriptionRecette">Faire ramollir le beurre en morceaux.<br>
+                Ajouter en remuant avec un fouet (dans l'ordre) le sucre en poudre, les œufs un par un, la farine tamisée, la levure, le zeste de deux oranges et le jus d'une orange. Beurrer le moule.<br> Cuire à four moyen environ 40 min (faites le test de la lame de couteau pour tester la cuisson qui prend parfois plus de temps).<br>
+Démouler en sortant du four (conseil : glisser une lame de couteau tout autour et retourner sur un plat. Laisser refroidir un peu et enlever ensuite le moule).<br>
+Glaçage : Cuire à feu doux 5 min le sucre glace et le jus de 3 oranges.<br> Arroser le gâteau de sirop sur toutes les faces en le retournant délicatement. Dégustez frais.<br>
+Le gâteau peut se préparer la veille et se conserver une nuit au frigo).</p>
+           </div>
+            <div id="recetteProduit2">
+                <h3>Gâteau à la pomme</h3>
+                <p>Ingrédients:</p>
+                <ul>
+                    <li>3 pommes,</li>
+                    <li>200g de sucre,</li>
+                    <li>240g de farine,</li>
+                    <li>4 oeufs,</li>
+                    <li>160g de beurre mou.</li>
+                </ul>
+                <p class="descriptionRecette">Faire ramollir le beurre en morceaux.<br>
+                Ajouter en remuant avec un fouet (dans l'ordre) le sucre en poudre, les œufs un par un, la farine tamisée, la levure, le zeste de deux oranges et le jus d'une orange. Beurrer le moule.<br> Cuire à four moyen environ 40 min (faites le test de la lame de couteau pour tester la cuisson qui prend parfois plus de temps).<br>
+Démouler en sortant du four (conseil : glisser une lame de couteau tout autour et retourner sur un plat. Laisser refroidir un peu et enlever ensuite le moule).<br>
+Glaçage : Cuire à feu doux 5 min le sucre glace et le jus de 3 oranges.<br> Arroser le gâteau de sirop sur toutes les faces en le retournant délicatement. Dégustez frais.<br>
+Le gâteau peut se préparer la veille et se conserver une nuit au frigo).</p>
+           </div>
+            <div id="recetteProduit3">
+                <h3>Tarte à la carotte</h3>
+                <p>Ingrédients:</p>
+                <ul>
+                    <li>3 carottes,</li>
+                    <li>200g de sucre,</li>
+                    <li>240g de farine,</li>
+                    <li>4 oeufs,</li>
+                    <li>160g de beurre mou.</li>
+                </ul>
+                <p class="descriptionRecette">Faire ramollir le beurre en morceaux.<br>
+                Ajouter en remuant avec un fouet (dans l'ordre) le sucre en poudre, les œufs un par un, la farine tamisée, la levure, le zeste de deux oranges et le jus d'une orange. Beurrer le moule.<br> Cuire à four moyen environ 40 min (faites le test de la lame de couteau pour tester la cuisson qui prend parfois plus de temps).<br>
+Démouler en sortant du four (conseil : glisser une lame de couteau tout autour et retourner sur un plat. Laisser refroidir un peu et enlever ensuite le moule).<br>
+Glaçage : Cuire à feu doux 5 min le sucre glace et le jus de 3 oranges.<br> Arroser le gâteau de sirop sur toutes les faces en le retournant délicatement. Dégustez frais.<br>
+Le gâteau peut se préparer la veille et se conserver une nuit au frigo).</p>
+           </div>
+            <div id="recetteProduit4">
+                <h3>Confiture de tomate</h3>
+                <p>Ingrédients:</p>
+                <ul>
+                    <li>3 tomates,</li>
+                    <li>200g de sucre,</li>
+                    <li>240g de farine,</li>
+                    <li>4 oeufs,</li>
+                    <li>160g de beurre mou.</li>
+                </ul>
+                <p class="descriptionRecette">Faire ramollir le beurre en morceaux.<br>
+                Ajouter en remuant avec un fouet (dans l'ordre) le sucre en poudre, les œufs un par un, la farine tamisée, la levure, le zeste de deux oranges et le jus d'une orange. Beurrer le moule.<br> Cuire à four moyen environ 40 min (faites le test de la lame de couteau pour tester la cuisson qui prend parfois plus de temps).<br>
+Démouler en sortant du four (conseil : glisser une lame de couteau tout autour et retourner sur un plat. Laisser refroidir un peu et enlever ensuite le moule).<br>
+Glaçage : Cuire à feu doux 5 min le sucre glace et le jus de 3 oranges.<br> Arroser le gâteau de sirop sur toutes les faces en le retournant délicatement. Dégustez frais.<br>
+Le gâteau peut se préparer la veille et se conserver une nuit au frigo).</p>
+           </div>
+        </div>
+        
+        <div id="detailCategorie4">
+            <h2>Nos conseils pour ne plus gaspiller !</h2>
+            <img src="images/menu/4/recup.svg" alt="illustration récupération">
+            <div id="pCat4">
+                <p>Avant d’aller faire les courses, faites une liste en vérifiant ce qu'il reste dans le réfrigérateur et les placards, et en planifiant les menus pour la semaine à venir.</p>
+                <p>Privilégiez les produits en vrac et au détail.</p>
+                <p>Dans les magasins comme à la maison, faites attention aux dates limites de consommation des produits.</p>
+                <p>En fonction des dates limites de consommation, rangez devant ou au-dessus les aliments qui doivent être consommés au plus tôt.</p>
+                <p>Accommodez les restes de repas pour faire, par exemple, une salade ou un gratin avec des pâtes, des gâteaux pour finir les œufs et le beurre, du pain perdu. Les fruits et légumes abimés, une fois les parties gâtées enlevées, peuvent servir pour des soupes, des gratins de légumes, des tartes, des compotes.</p>
+            </div>
+        </div>
+        
+        <div id="detailCategorie5">
+            <img src="images/menu/5/chef.svg" alt="Illustration chef" id="chefCat5">
+            <h2>Des chefs de qualité:</h2>
+            <p>Nos chefs sont experts dans leur domaine et vous promettent des produits frais et de saison pour vos enfants.<br> Nous n’engageons que des experts pour la réalisation des plats à destination de toutes nos cantines.</p>
+            <h2>Les produits en détail:</h2>
+            <p><span>Nos fruits & légumes:</span><br>Leur fraîcheur et leur provenance sont très importantes, achetés chez nos agriculteurs locaux. Pour exemple, une société familiale de produits frais ne cesse de nous surprendre par le goût raffiné de ses produits, c'est pourquoi nous entretenons une étroite relation avec. « Ambrogi Foods Distribution » est également bien plus qu'un partenaire, au point de cultiver à notre demande les fruits et légumes que l’on souhaite.</p>
+            <p><span>Nos salades:</span><br>Cultivés en France, la fraîcheur et la qualité de notre produit est au centre de nos attentions. Dès la cueillette de la salade, les agriculteurs de « producteur de laitues » nous livrent dans nos cuisines et vous assurent un produit de qualité.</p>
+            <p><span>Nos salades:</span><br>Cultivé en France, la fraîcheur et la qualité de notre produit est au centre de nos attentions. Dès la cueillette de la salade, les agriculteurs de « producteur de laitues » nous livrent dans nos cuisines et vous assurent un produit de qualité.</p>
+            <p><span>Nos viandes:</span><br><b>Bovines:</b> 50% d’origine française et 50% d’origine européenne pour la viande Bovine.<br> 
+<b>Volaille:</b> 85% de notre viande de Volaille vient de France et 15 autres % proviennent de l’union européenne. Des normes de production sont respectées en ce qui concerne les
+                traitements animaliers.</p>
+            <p><span>Nos poissons:</span><br>Chez Sodexo, nous vous promettons une minutie sur le choix et sur la conservation de nos poissons. Les contrôles sont réguliés pour assurer aux consommateurs la fraîcheur de nos produits.</p>
+        </div>
+        
+        <div id="detailCategorie6">
+            <form id="messageForm">
+                <img src="images/menu/6/docteurs.svg" alt="Illustration sur les experts" id="imgDocteurs">
+                <p><input id="emailExpert" autofocus="" placeholder="Adresse email" autocomplete="on" name="email" type="email" required></p>
+                <p><textarea id="messageExpert" name="messageExpert" rows=10 cols=45 maxlength="250" placeholder="Envoyez votre message à nos experts ici !" required></textarea></p>
+                <button id="submitMessage" type="submit" class="submit">Envoyer</button>
+            </form>
+        </div>
+        
+        <script src="js/autocomplete_ecole.js"></script>
+        <script src="js/menu_categorie.js"></script>
+    </body>
+</html>
+
